@@ -1,0 +1,18 @@
+{
+  "name": "deploy-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^20.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "tar": "^2.2.1"
+  }
+}
