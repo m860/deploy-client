@@ -47,19 +47,19 @@ module.exports = function (url, root, dist, scriptText) {
 	var reader = fstream.Reader({path: tempPath}).pipe(packer).pipe(zip);
 	reader.on('error', onError);
 	reader.on('finish', function () {
-		console.log('finsh');
-		// var tarPackage=path.join(root,'package.tar');
-		// request.post({
-		// 	url: url,
-		// 	formData: {
-		// 		package: fs.createReadStream(tarPackage)
-		// 	}
-		// }, function (err) {
-		// 	if (err) {
-		// 		return console.error(err);
-		// 	}
-		// 	console.log('upload success');
-		// 	fs.unlink(tarPackage);
-		// });
+		console.log('finish');
+		var tarPackage=path.join(root,'package.tar');
+		request.post({
+			url: url,
+			formData: {
+				package: fs.createReadStream(tarPackage)
+			}
+		}, function (err) {
+			if (err) {
+				return console.error(err);
+			}
+			console.log('upload success');
+			fs.unlink(tarPackage);
+		});
 	});
 };
