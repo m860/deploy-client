@@ -32,12 +32,12 @@ module.exports = function (url, root, dist, scriptText) {
 
 	function onError(err) {
 		console.error('an error occurred:', err);
-		// rmTemp();
+		rmTemp();
 	}
 
 	function onEnd() {
 		console.log('pack success !');
-		// rmTemp();
+		rmTemp();
 	}
 
 	var packer = tar.Pack({noProprietary: true})
